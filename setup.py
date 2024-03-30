@@ -8,6 +8,8 @@ setup(
         'torch',
         'torchvision',
         'Pillow',
+        'matplotlib',
+        'numpy',
 
         
     ],
