@@ -19,7 +19,15 @@ The Adversarial Noise Generator is a Python library designed to introduce advers
 - Includes utilities for image preprocessing and postprocessing.
 - Provides examples and test suite.
 
-### Usage
+### Installation
 
+Below are the following to install the Adversarial Noise Generator:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/adversarial-noise-generator.git
+
+
+- Navigate to the cloned directory
 
 
