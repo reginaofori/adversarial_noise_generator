@@ -1,18 +1,20 @@
 import argparse
 import os
 import torch
+import json
 from PIL import Image
 import matplotlib.pyplot as plt
 from adversarial.models import load_model
 from adversarial.attacks import apply_fgsm_attack
 from adversarial.utils import preprocess_image, postprocess_image
 
-# Initial Target Class
-class_labels = {
-    "labrador_retriever": 208,
-    "tabby_cat": 281,
-    "butterfly": 322
-}
+
+
+def load_class_labels(json_filepath):
+    with open(json_filepath, 'r') as file:
+        class_labels = json.load(file)
+    return class_labels
+
 
 def validate_image_path(path):
     if not os.path.exists(path):
@@ -23,6 +25,8 @@ def get_class_index(class_name_or_index):
         return int(class_name_or_index)
     else:
         class_name = class_name_or_index.lower().replace(" ", "_")
+        class_labels = load_class_labels('target_class.json')
+
         if class_name in class_labels:
             return class_labels[class_name]
         else:
