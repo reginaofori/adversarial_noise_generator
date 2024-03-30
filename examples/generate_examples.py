@@ -9,7 +9,7 @@ from adversarial.attacks import apply_fgsm_attack
 from adversarial.utils import preprocess_image, postprocess_image
 
 
-
+# To load the target class 
 def load_class_labels(json_filepath):
     with open(json_filepath, 'r') as file:
         class_labels = json.load(file)
@@ -67,6 +67,7 @@ def main(image_path, target_class, epsilon, model_name):
 
     print("Adversarial image generated and saved as 'adversarial_image.jpg'")
     visualize_images(image_path, adversarial_image)
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate an adversarial image using FGSM attack.")
