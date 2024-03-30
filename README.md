@@ -9,7 +9,7 @@ The Adversarial Noise Generator is a Python library designed to introduce advers
 - [Usage](#usage)
   - [Generating Adversarial Images](#generating-adversarial-images)
   - [Jupyter Notebook](#visualizing-attacks)
-  - [Limitation] (#Limitation)
+  - [Limitation](#limitation)
 - [Tests](#test)
 
 
@@ -48,7 +48,7 @@ pip install e .
 To generate adversarial images using the library, run the `generate_examples.py` script:
 
 ```bash
-python examples/generate_examples.py [path/to/image.jpg-needed] [208 (target-class-needed)] 
+python examples/generate_examples.py [path/to/image.jpg-needed] [208 (target-class-index-needed)] 
 e.g. python ./examples/generate_examples.py ./examples/sample_images/bee.jpg 208 --epsilon 0.02 --model_name resnet18
 ```
 - ### Jupyer Notebook
@@ -59,6 +59,19 @@ A simple jupyter notebook for illustration
 jupyter notebook examples/attacks_example.ipynb
 
 ```
+
+### Limitations
+
+## Limitations
+
+While this Adversarial Noise Generator aims to be a tool for generating adversarial images and testing machine learning model robustness, there are several limitations to be aware of:
+
+- **Model Compatibility:** The current version of the library is primarily tested with specific models pre-trained models and not SOTA models such as transformers/Large Language models (LLMs).
+
+- **Attack Techniques:** The library includes implementations for popular adversarial attack techniques like FGSM and PGD.
+
+- **Target class:** The target class in teh form of json file used consist of only the first 500 target classes in IMAGENET.
+
 ### Tests
 
 1.  To run the tests, install the extra dependecies in the dev-requirement.txt 
