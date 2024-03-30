@@ -45,7 +45,7 @@ pip install e .
 
 - ### Generating Adversarial Images
 
-To generate adversarial images using the library, run the `generate_examples.py` script:
+To generate adversarial images using the library, run the `generate_examples.py` script whicch takes in the ``image`` and ``the target class id``. Please refer to the IMAGENET classlist [https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/] for the various target class IDs:
 
 ```bash
 python examples/generate_examples.py [path/to/image.jpg-needed] [208 (target-class-index-needed)] 
@@ -62,9 +62,7 @@ jupyter notebook examples/attacks_example.ipynb
 
 ### Limitations
 
-## Limitations
-
-While this Adversarial Noise Generator aims to be a tool for generating adversarial images and testing machine learning model robustness, there are several limitations to be aware of:
+While this Adversarial Noise Generator aims to be a tool for generating adversarial images and testing machine learning model robustness, here is a sumamry of some of its limitations:
 
 - **Model Compatibility:** The current version of the library is primarily tested with specific models pre-trained models and not SOTA models such as transformers/Large Language models (LLMs).
 
