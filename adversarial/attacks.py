@@ -13,17 +13,17 @@ def apply_fgsm_attack(image, target, model, epsilon):
     Returns:
     - perturbed_image: torch.Tensor, image tensor with adversarial noise applied.
     """
-    image.requires_grad = True  # Enable gradient calculation for the image
+    # Enable gradient calculation for the image
+    image.requires_grad = True  
 
-    output = model(image)
-    loss = torch.nn.functional.cross_entropy(output, target)
+    # Calculate loss to obtain image gradient
+    loss = torch.nn.functional.cross_entropy(model(image), target)
     model.zero_grad()
     loss.backward()
-    image_grad = image.grad.data
 
-    # Generate adversarial image by applying the perturbation
-    perturbation = epsilon * image_grad.sign()
-    perturbed_image = image + perturbation
-    perturbed_image = torch.clamp(perturbed_image, 0, 1) 
+    # Generate and apply perturbation
+    perturbation = epsilon * image.grad.sign()
+    perturbed_image = (image + perturbation).clamp(0, 1)
+
 
     return perturbed_image
