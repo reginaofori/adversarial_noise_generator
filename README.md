@@ -46,3 +46,8 @@ pip install e .
 ```bash
 pip install -e .[dev]
 ```
+
+5. The test folder is run with the following:
+```bash
+python -m pytest test/
+```
