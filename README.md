@@ -26,8 +26,23 @@ Below are the following to install the Adversarial Noise Generator:
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/adversarial-noise-generator.git
+```
+
+2. Navigate to the cloned directory
+
+```bash
+cd adversarial-noise-generator
+```
+
+3.  Install the required dependencies
+
+```bash
+pip install e .
+``` 
 
 
-- Navigate to the cloned directory
+4. To run the tests, install the extra dependecies in the dev-requirement.txt 
 
-
+```bash
+pip install -e .[dev]
+```
