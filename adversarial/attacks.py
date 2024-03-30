@@ -25,5 +25,4 @@ def apply_fgsm_attack(image, target, model, epsilon):
     perturbation = epsilon * image.grad.sign()
     perturbed_image = (image + perturbation).clamp(0, 1)
 
-
     return perturbed_image
