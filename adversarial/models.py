@@ -2,16 +2,14 @@ import torchvision.models as models
 
 def load_model(model_name='resnet18', pretrained=True):
     """
-    Load a pre-trained model from torchvision's available models.
-
+    Loads a pre-trained model from torchvision and set to evaluation mode.
+    
     Parameters:
-    - model_name: str, name of the model to load.
-    - pretrained: bool, if True, loads a model pre-trained on ImageNet.
-
+    - model_name (str): Name of the model to load. Default is 'resnet18'.
+    - pretrained (bool): If True, loads a model pre-trained on ImageNet. Default is True.
+    
     Returns:
-    - model: torchvision model, the loaded pre-trained model.
+    - A torchvision model in evaluation mode.
     """
-    model = getattr(models, model_name)(pretrained=pretrained)
-    # Setting the model to evaluation mode
-    model.eval()  
-    return model
+    
+    return getattr(models, model_name)(pretrained=pretrained).eval()
