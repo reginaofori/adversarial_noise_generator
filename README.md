@@ -3,6 +3,36 @@
 The Adversarial Noise Generator is a Python library designed to introduce adversarial noise into images. This noise is crafted to trick pre-trained image classification models into misclassifying the altered image as a specified target class, while maintaining the original image's appearance to human viewers.
 
 
+### Project Structure
+
+Below is the structure of the  project:
+
+```bash
+adversarial-noise-generator/
+│
+├── adversarial/            # Core library code
+│   ├── __init__.py         # Makes adversarial a Python package
+│   ├── models.py           # Model loading and processing
+│   ├── attacks.py          # Adversarial attack implementations (FGSM)
+│   └── utils.py            # Utility functions for image processing and others
+│
+├── examples/               # Example scripts and notebooks
+│   ├── generate_example.py # Script to generate an adversarial image
+│   └── visualize_attacks.ipynb # Jupyter notebook for simple illustration
+│
+├── tests/                  # Unit and integration tests
+│   ├── __init__.py
+│   ├── test_models.py
+│   ├── test_attacks.py
+│   └── test_utils.py
+│
+├── setup.py                # Setup script for installing the library
+├── requirements.txt        # List of project dependencies
+├── README.md               # Project overview, installation instructions, and usage examples
+└── .gitignore              # untracked files to ignore
+```
+
+
 ### Table of Contents
 - [Features](#features)
 - [Installation](#installation)
