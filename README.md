@@ -27,7 +27,8 @@ adversarial-noise-generator/
 │   └── test_utils.py
 │
 ├── setup.py                # Setup script for installing the library
-├── requirements.txt        # List of project dependencies
+├── requirements.txt        # List of required project dependencies
+├── dev-requiremnt.txt      # List of extra dependencies, necessary during test
 ├── README.md               # Project overview, installation instructions, and usage examples
 └── .gitignore              # untracked files to ignore
 ```
