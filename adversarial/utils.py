@@ -2,36 +2,37 @@ from PIL import Image
 import torchvision.transforms as transforms
 
 def preprocess_image(image_path, size=(224, 224)):
-
     """
-    Preprocess an image file to a format suitable for model input.
+    Preprocesses an image file for model input, resizing it and converting to a tensor.
 
     Parameters:
-    - image_path: str, path to the image file.
-    - size: tuple, target size of the image (height, width).
+    - image_path (str): Path to the image file.
+    - size (tuple): Target size of the image (height, width), default is (224, 224).
 
     Returns:
-    - image_tensor: torch.Tensor, preprocessed image tensor.
+    - torch.Tensor: Preprocessed image tensor with an added batch dimension.
     """
+    # Defines the preprocessing pipeline
     preprocessing = transforms.Compose([
         transforms.Resize(size),
         transforms.ToTensor(),
     ])
 
+    # Opens the image, apply preprocessing, and add a batch dimension
     image = Image.open(image_path)
-    image_tensor = preprocessing(image).unsqueeze(0)  
-    return image_tensor
+    return preprocessing(image).unsqueeze(0)  
+
+
 
 def postprocess_image(image_tensor):
     """
-    Postprocess a torch.Tensor image to a PIL image.
+    Converts a torch.Tensor back into a PIL image, removing the batch dimension.
 
     Parameters:
-    - image_tensor: torch.Tensor, the image tensor to postprocess.
+    - image_tensor (torch.Tensor): The image tensor to convert.
 
     Returns:
-    - image: PIL.Image, the postprocessed image.
+    - PIL.Image: The postprocessed image.
     """
-    image_tensor = image_tensor.squeeze(0)  
-    image = transforms.ToPILImage()(image_tensor)
-    return image
+    # Convert the tensor to a PIL image after removing the batch dimension
+    return transforms.ToPILImage()(image_tensor.squeeze(0))
