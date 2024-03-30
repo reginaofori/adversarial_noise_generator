@@ -1,6 +1,7 @@
 import torchvision.models as models
 
 def load_model(model_name='resnet18', pretrained=True):
+    
     """
     Loads a pre-trained model from torchvision and set to evaluation mode.
     
@@ -11,5 +12,5 @@ def load_model(model_name='resnet18', pretrained=True):
     Returns:
     - A torchvision model in evaluation mode.
     """
-    
+
     return getattr(models, model_name)(pretrained=pretrained).eval()
