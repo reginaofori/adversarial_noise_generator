@@ -53,8 +53,12 @@ e.g. python ./examples/generate_examples.py ./examples/sample_images/bee.jpg 208
 ```
 - ### Jupyer Notebook
 
+A simple jupyter notebook for illustration
 
+```bash
+jupyter notebook examples/attacks_example.ipynb
 
+```
 ### Tests
 
 1.  To run the tests, install the extra dependecies in the dev-requirement.txt 
