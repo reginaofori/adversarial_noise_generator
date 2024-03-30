@@ -45,7 +45,8 @@ pip install e .
 
 - ### Generating Adversarial Images
 
-To generate adversarial images using the library, run the `generate_examples.py` script whicch takes in the ``image`` and ``the target class id``. Please refer to the IMAGENET classlist [https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/] for the various target class IDs:
+To generate adversarial images using the library, run the `generate_examples.py` script which takes in the ``image`` and ``the target class id``. For a list of target class IDs and class names as used in ImageNet, please refer to the official [ImageNet class list](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/).
+
 
 ```bash
 python examples/generate_examples.py [path/to/image.jpg-needed] [208 (target-class-index-needed)] 
@@ -68,7 +69,7 @@ While this Adversarial Noise Generator aims to be a tool for generating adversar
 
 - **Attack Techniques:** The library includes implementations for popular adversarial attack techniques like FGSM and PGD.
 
-- **Target class:** The target class in teh form of json file used consist of only the first 500 target classes in IMAGENET.
+- **Target class:** The target class in the form of json file used consist of only the first 500 target classes in IMAGENET.
 
 ### Tests
 
