@@ -8,7 +8,8 @@ The Adversarial Noise Generator is a Python library designed to introduce advers
 - [Installation](#installation)
 - [Usage](#usage)
   - [Generating Adversarial Images](#generating-adversarial-images)
-  - [Visualizing Attacks](#visualizing-attacks)
+  - [Jupyter Notebook](#visualizing-attacks)
+  - [Limitation] (#Limitation)
 - [Tests](#test)
 
 
@@ -40,14 +41,29 @@ cd adversarial-noise-generator
 pip install e .
 ``` 
 
+### Usage
 
-4. To run the tests, install the extra dependecies in the dev-requirement.txt 
+- ### Generating Adversarial Images
+
+To generate adversarial images using the library, run the `generate_examples.py` script:
+
+```bash
+python examples/generate_examples.py [path/to/image.jpg-needed] [208 (target-class-needed)] 
+e.g. python examples/generate_examples.py path/to/image.jpg 208 --epsilon 0.05 --model_name resnet18
+```
+- ### Jupyer Notebook
+
+
+
+### Tests
+
+1.  To run the tests, install the extra dependecies in the dev-requirement.txt 
 
 ```bash
 pip install -e .[dev]
 ```
 
-5. The test folder is run with the following:
+2.  The test folder is run with the following:
 ```bash
 python -m pytest test/
 ```
