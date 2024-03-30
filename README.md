@@ -49,7 +49,7 @@ To generate adversarial images using the library, run the `generate_examples.py`
 
 ```bash
 python examples/generate_examples.py [path/to/image.jpg-needed] [208 (target-class-needed)] 
-e.g. python examples/generate_examples.py path/to/image.jpg 208 --epsilon 0.05 --model_name resnet18
+e.g. python ./examples/generate_examples.py ./examples/sample_images/bee.jpg 208 --epsilon 0.02 --model_name resnet18
 ```
 - ### Jupyer Notebook
 
